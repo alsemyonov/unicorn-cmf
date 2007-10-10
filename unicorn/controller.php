@@ -4,6 +4,10 @@ class Dispatcher {
 	
 }
 
-class Controller {
+class Router {
+	
+}
+
+abstract class Controller {
 	
 }
