@@ -1,0 +1,18 @@
+common:
+  db:
+    host: localhost
+    driver: mysql
+    user: root
+    password: 
+
+tests:
+  app:
+    debug: 2
+
+development:
+  app:
+    debug: 1
+
+production:
+  app:
+    debug: 0
