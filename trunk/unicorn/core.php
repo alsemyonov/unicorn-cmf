@@ -52,3 +52,4 @@ class Registry implements ArrayAccess {
 function __autoload($className) {
 	
 }
+
