@@ -1,0 +1,14 @@
+routes:
+  default:
+    path: "$controller/$action/$id"
+  
+  templates:
+    user:
+      path: "user/$id"
+      goto: {controller: users, action: profile}
+      
+  rest:
+    user:
+      controller: users
+      map: 
+        
