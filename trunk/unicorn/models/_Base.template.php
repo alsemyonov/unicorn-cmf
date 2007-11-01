@@ -1,27 +1,9 @@
-<?php
+[?php
 
-class NodeBase extends Model {
-	public $_name = 'Node';
+class <?php echo $base->_name ?>Base extends Model {
+	public $_name = '<?php echo $base->_name ?>';
 
-	private $_schema = array(
-		'id' => 'pk', 
-		'created_at' => 'int', 
-		'updated_at' => 'int',
-		'title' => array('type' => 'string', 'size' => 255, 'default' => null, 'null' => null)
-		'body' => 'text',
-		'user_id' => 'int',
-	);
+	private $_schema = <?php arrayToPhp($base->_schema); ?>;
 
-	private $_associations = array(
-		'belongsTo' => array(
-			'Author' => array(
-				'className' => 'User',
-				'foreignKey' => 'user_id'
-			),
-		),
-	);
-
-	
+	private $_associations = <?php arrayToPhp($base->_associations); ?>;
 }
-
-?>

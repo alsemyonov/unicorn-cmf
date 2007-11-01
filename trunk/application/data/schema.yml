@@ -1,8 +1,12 @@
 schema:
+  Sample:
+    id: false 
+    created_at: false
+    updated_at: false
   User:
     id:
     name: string
-    password: [text, 32]
+    password: [string, 32]
     created_at:
     updated_at:
   Node:
