@@ -6,6 +6,9 @@
 		<!--[if IE]><link rel="stylesheet" href="css/blueprint/lib/ie.css" type="text/css" media="screen, projection"><![endif]-->
 		<link rel="stylesheet" href="css/development.css" type="text/css" media="screen">
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<script type="text/javascript" src="js/prototype.js"></script>
+		<script type="text/javascript" src="js/scriptaculous.js"></script>
+		<script type="text/javascript" src="js/application.js"></script>
 	</head>
 	<body>
 		<div id="wrapper" class="container">
@@ -30,9 +33,9 @@
 					<div id="popular" class="popular block medium">
 						<h2>Это&nbsp;&mdash; вызывающе!..</h2>
 						<ul>
-							<li>Практикум ХС в СПб</li>
-							<li>Искусство сновидения</li>
-							<li>Пасьянс медичи</li>
+							<li><div id="workshop_1" class="workshop interest preview">Практикум ХС в СПб</div></li>
+							<li><div id="article_2" class="article preview">Искусство сновидения</div></li>
+							<li><div id="post_3" class="blog post preview">Пасьянс медичи</div></li>
 						</ul>
 					</div>
 					<div id="interest" class="interest block small last">
@@ -47,13 +50,26 @@
 						</form>
 						<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006609117705353184305%3Av4e416trcte"></script>
 						<!-- Google CSE Search Box Ends -->
-
-
 					</div>
 				</div>
 				<div class="line">
-					<div id="blog" class="blog block wide"></div>
-					<div id="quote" class="quote block medium last"></div>
+					<div id="blog" class="blog block wide">
+						<h2>Мы пишем:</h2>
+						<div id="post_2" class="post preview">
+							<a class="user" href="/users/rotuka">roTuKa</a> &rarr; <h3 class="inline">Ура! Новый ОС в Серверной!</h3>
+							<p>Сегодня, в 03:54</p>
+							<div class="teaser">
+								<p>Привет, друзья!<br />Сегодня ночью я снова побывал в серверной. Хочу сказать вам, это &mdash; непередаваемые ощущения. Весь вечер я копался в коде &mdash; доделывал один из сайтов</p>
+							</div>
+						</div>
+					</div>
+					<div id="quote" class="quote block medium last">
+						<h2>Великие мысли&hellip;</h2>
+						<blockquote id="quote_2" class="quote preview">
+							<p>Ведение электронного сновиденного дневника&nbsp;&mdash; есть вторичное неделание сновиденного мира.</p>
+							<address>Belo</address>
+						</blockquote>
+					</div>
 				</div>
 				<div class="line">
 					<div id="answer" class="answer block medium"></div>

@@ -8,24 +8,73 @@ class Datasource {
 	
 }
 
-abstract class Model implements ArrayObject {
-	public $name;
-	public $data = array	();
-	private $schemeInfo = array();
+abstract class Model implements ArrayAccess {
+	private $belongsTo = false;
+	private $hasOne = false;
+	private $hasMany = false;
+	private $hasAndBelongsToMany = false;
+
+	public $_name;
+	public $_database = 'default';
+	public $_data = array();
+	private $_schema = array();
+	private $_associations = array(
+		'belongsTo' => array(),
+		'hasOne' => array(),
+		'hasMany' => array(),
+		'hasAndBelongsToMany' => array(),
+	);
+
 
 	function __construct($array = null) {
-		if (null == $name) {
-			$name = get_class($this);
+		if (null == $this->name) {
+			$this->name = get_class($this);
+		}
+		
+		if (empty($this->_schema)) {
+			$this->_schema = $this->getDb()->getSchema($this->_name);
+		}
+		
+		$this->bindModels(array(
+			'belongsTo' => $this->belongsTo, 
+			'hasOne' => $this->hasOne, 
+			'hasMany' => $this->hasMany,
+			'hasAndBelongsToMany' => $this->hasAndBelongsToMany,
+		));
+	}
+	
+	function bindModels($assoc) {
+		foreach($assoc as $type => $params) {
+			if ($params) {
+				
+				
+				$this->_associations[$type] = $params;
+			}
 		}
 	}
 
-	public function set($data = null) {
-		if (is_array($data)) {
-			if (!isset($data[$this->name])) {
-				$data = array($this->name => $data);
+	public function set($key = null, $value = null) {
+		// TypeCast $key and $value, makes $data array
+		if (is_string($key)) {
+			$data = array($key => $value);
+		} elseif(is_array($key)) {
+			$data = $key;
+		} else {
+			$data = array();
+		}
+		
+		if (!isset($data[$this->name])) {
+			$data = array($this->name => $data);
+		}
+		
+		foreach($data as $model => $values) {
+			if ($model == $this->name) {
+				foreach($values as $key => $value) {
+					$this->_data[$key] = $value;
+				}
+			} else {
+				$this->$model->set($values);
 			}
-			
-			
 		}
 	}
 
@@ -34,7 +83,7 @@ abstract class Model implements ArrayObject {
 
 	}
 
-	public function read($fields = null) {
+	public function read($what = null, $params = null) {
 
 	}
 
