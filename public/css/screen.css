@@ -34,9 +34,15 @@ form#user-login {}
 			float: right; margin-right: 0;
 		}
 
+/* structures */
+.preview {} /* marks all preview sites, used by jsLoaders */
+	.preview h3 {
+		display: inline;
+	}
+
 /* information-classes */
-.user      {background-color: #fcc; color: #000;}
-.popular   {background-color: #fa8; color: #000;}
+.user      {background-color: #f99; color: #000;}
+.popular   {background-color: #fa0; color: #000;}
 .interest  {background-color: #ffc; color: #000;}
 .blog      {background-color: #cfc; color: #000;}
 .quote     {background-color: #ccf; color: #000;}
@@ -52,3 +58,8 @@ form#user-login {}
 .small { width: 245px; }
 .medium { width: 365px; }
 .wide { width: 525px; }
+
+/* some useful */
+.inline {
+	display: inline;
+}

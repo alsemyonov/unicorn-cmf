@@ -1,0 +1,8 @@
+Node:
+  id:
+  title: string
+  body: text
+  author_id: {belongs_to: User}
+  created_at:
+  updated_at:
+  
