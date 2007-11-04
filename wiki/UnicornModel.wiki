@@ -34,3 +34,13 @@ interface Model {
   public function isModified();
 }
 }}}
+
+= DbModel =
+
+Реализация ORM.
+
+{{{
+interface DbModel {
+  static funtion findBy__();
+}
+}}}
