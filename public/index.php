@@ -2,4 +2,4 @@
 
 include '../index.php';
 
-Configure::load('node', 'data/models');
+ucConfigure::load('node', 'data/models');
