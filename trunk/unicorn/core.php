@@ -6,7 +6,7 @@ class Unicorn {
 	
 }
 
-class Registry implements ArrayAccess {
+class ucRegistry implements ArrayAccess {
 	private $vars = array();
 
 	function __construct() {
@@ -17,14 +17,14 @@ class Registry implements ArrayAccess {
 		static $instance = array();
 
 		if (empty($instance)) {
-			$instance[0] = new Registry();
+			$instance[0] = new ucRegistry();
 		}
 
 		return $instance[0];
 	}
 	
 	function set($key, $var) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		if (isset($_this->vars[$key]) == true) {
 			throw new Exception('Unable to set var `' . $key . '`. Already set.');
@@ -35,7 +35,7 @@ class Registry implements ArrayAccess {
 	}
 
 	function get($key) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		if (isset($_this->vars[$key]) == false) {
 			return null;
@@ -45,45 +45,45 @@ class Registry implements ArrayAccess {
 	}
 
 	function remove($var) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		unset($_this->vars[$key]);
 	}
 
 	function offsetExists($offset) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		return isset($_this->vars[$offset]);
 	}
 
 	function offsetGet($key) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		$_this->get($key);
 	}
 	
 	function offsetSet($key, $value) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		$_this->set($key, $value);
 	}
 
 	function offsetUnset($offset) {
-		$_this = Registry::getInstance();
+		$_this = ucRegistry::getInstance();
 
 		$_this->remove($offset);
 	}
 
 }
 
-class Configure {
+class ucConfigure {
 	private $_data = array();
 	
 	function getInstance() {
 		static $instance = array();
 
 		if (empty($instance)) {
-			$instance[0] = new Configure();
+			$instance[0] = new ucConfigure();
 		}
 
 		return $instance[0];
@@ -98,7 +98,7 @@ class Configure {
 	}
 
 	function load($fileName = 'config', $dirName = 'config') {
-		$_this = Configure::getInstance();
+		$_this = ucConfigure::getInstance();
 
 		$fileName = $dirName . DS . $fileName;
 
@@ -109,7 +109,7 @@ class Configure {
 	}
 
 	function getParsed($name) {
-		$_this = Configure::getInstance();
+		$_this = ucConfigure::getInstance();
 
 		$parsedName = APP . 'tmp' . DS . $name . '.php';
 
@@ -124,7 +124,7 @@ class Configure {
 	}
 
 	function parse($name) {
-		$_this = Configure::getInstance();
+		$_this = ucConfigure::getInstance();
 
 		$unParsedName = APP . $name . '.yml';
 		if (file_exists($unParsedName)) {
@@ -140,7 +140,7 @@ class Configure {
 	}
 
 	function save($name, $data) {
-		$_this = Configure::getInstance();
+		$_this = ucConfigure::getInstance();
 		$parsedName = APP . 'tmp' . DS . $name . '.php';
 		$content = "<?php\n\n";
 		
