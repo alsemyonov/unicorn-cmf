@@ -1,0 +1,11 @@
+﻿author:before {
+	content: 'Автор: ';
+	font-style: normal;
+}
+
+copyright:before {
+	content: '© '
+}
+	copyright year:after {
+		content: ', '
+	}

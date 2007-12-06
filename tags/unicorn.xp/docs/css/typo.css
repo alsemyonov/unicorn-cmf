@@ -1,0 +1,35 @@
+book {
+	font-size: 75%;
+	color: #222; 
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+title { 
+	font-weight: normal; color: #111; 
+}
+
+info title { 
+	font-size: 3em; 
+	line-height: 1; 
+	margin-bottom: 0.5em; 
+}
+chapter title, 
+preface title { 
+	font-size: 2em; 
+	margin-bottom: 0.75em; 
+}
+
+/*
+h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+*/
+
+para, author, copyright {
+	margin: 0 0 1.5em;
+}
+
+author {
+	font-style: italic;
+}

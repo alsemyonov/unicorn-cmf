@@ -1,9 +1,9 @@
 <?php
 
-require 'PHPUnit/Framework.php';
-require '../unicorn/core.php';
+require_once 'PHPUnit/Framework.php';
+require_once '../unicorn/core.php';
 
-class Unicorn_Registry extends PHPUnit_Framework_TestCase
+class ucRegistryTest extends PHPUnit_Framework_TestCase
 {
 	public function setUp() {
 		$this->reg = ucRegistry::getInstance();

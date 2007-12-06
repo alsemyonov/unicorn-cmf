@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="css/main.css" type="text/css"?>
+<book xmlns="http://docbook.org/ns/docbook">
+	<info>
+		<title>Единорог CMF</title>
+		<author><firstname>Александр</firstname> <surname>Семёнов</surname></author>
+		<copyright><year>2007</year><holder>Александр Семёнов</holder></copyright>
+	</info>
+	<preface>
+		<title>Первые шаги</title>
+		<para>
+			UnicornCMF - легковесный объектно-ориентированный фреймворк.
+		</para>
+	</preface>
+	<chapter id="chCore">
+		<artheader>
+			<title>Core - ядро Unicorn</title>
+			<author><firstname>Александр</firstname> <surname>Семёнов</surname></author>
+		</artheader>
+		
+		<para>
+			Этот файл вмещает в себя всю обязательную, ключевую функциональность, позволяющую 
+			использование фреймворка для различных ситуаций, а так же в различных окружениях.
+		</para>
+	</chapter>
+	
+	<appendix>
+		
+	</appendix>
+	
+	<index>
+		
+	</index>
+</book>
