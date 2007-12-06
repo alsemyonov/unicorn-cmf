@@ -1,0 +1,23 @@
+﻿/* Структура */
+book {
+	display: block; width: 80em;
+	margin: 2em auto; border: 1px solid #333; padding: .7em 1em;
+}
+
+	info {
+		display: block;
+	}
+
+		title {
+			display: block;
+			margin: 0.5em 0 1em 0;
+		}
+
+		author {
+			display: block;
+		}
+
+	chapter {
+		display: block;
+		
+	}
