@@ -1,0 +1,6 @@
+User:
+  id:
+  name: string
+  password: [text, 32]
+  created_at:
+  updated_at:

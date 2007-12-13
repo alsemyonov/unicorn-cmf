@@ -1,0 +1,65 @@
+@import 'blueprint/screen.css';
+@import 'blueprint/plugins/buttons/buttons.css';
+@import 'blueprint/plugins/buttons/buttons.css';
+
+/* Identifiers */
+#header h1 {
+	text-align: center;
+	font-size: 6em; line-height: 1;
+	margin-bottom: 18px; padding-bottom: 0; 
+}
+
+form#user-login {}
+	form#user-login p {
+		height: 30px; 
+		margin: 0 0 18px 0;
+	}
+		form#user-login p label {
+			float: left; font-weight: normal;
+			width: 97px; text-align: right;
+			line-height: 29px;
+			/*font-size: 20px; */
+			margin: 0 3px 0 0; padding: 0;
+		}
+		form#user-login p input {
+			float: left; border: 1px solid #ccc;
+			width: 145px; font-size: 24px;
+			margin: 0;
+		}
+	form#user-login p.submit {
+		height: 31px;
+		margin: 0; text-align: right;
+	}
+		form#user-login p.submit button {
+			float: right; margin-right: 0;
+		}
+
+/* structures */
+.preview {} /* marks all preview sites, used by jsLoaders */
+	.preview h3 {
+		display: inline;
+	}
+
+/* information-classes */
+.user      {background-color: #f99; color: #000;}
+.popular   {background-color: #fa0; color: #000;}
+.interest  {background-color: #ffc; color: #000;}
+.blog      {background-color: #cfc; color: #000;}
+.quote     {background-color: #ccf; color: #000;}
+.answer    {background-color: #aaf; color: #000;}
+.article   {background-color: #e8e; color: #000;}
+
+/* LAYOUT */
+.line {margin: 0 0 18px 0; width: 950px; float: left;}
+
+.block {height: 180px; float: left; margin-right: 10px; padding: 10px 10px 15px 15px;}
+.block.last { margin-right: 0; }
+
+.small { width: 245px; }
+.medium { width: 365px; }
+.wide { width: 525px; }
+
+/* some useful */
+.inline {
+	display: inline;
+}

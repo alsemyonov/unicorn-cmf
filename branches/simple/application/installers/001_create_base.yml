@@ -1,0 +1,41 @@
+﻿schema:
+  Node:
+    title: string
+    body: text
+  User:
+    _extends: Node
+    #~ node_id: {extends: Node}
+    _labels: 
+      title: "Ник"
+      body: "О себе"
+    email: [string, 50]
+    crypted_password: [string, 32]
+    last_login_at: int
+    cookie_token: [string, 32]
+  Blog:
+    _extends: Node
+    _labels: 
+      title: "Заголовок"
+      body: "Описание"
+    _hasAndBelongsToMany: 
+      Users: BlogUser
+    author_id: {belongsTo: User}
+  BlogUser:
+    id: false
+    blog_id: {belongsTo: Blog}
+    user_id: {belongsTo: User}
+    updated_at: false
+
+controllers:
+  users:
+    _autoload: 
+      models: [User]
+    _defaults:
+      action: profile
+      layout: default
+      format: [html, xml, js]
+    list: 
+      url: users, 
+      aliases: [index]
+    profile: {url: "user/$name", aliases: [view]}
+    edit: {url: "user/$name/edit"}
